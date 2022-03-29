@@ -1,0 +1,24 @@
+{% block aside %}
+
+<aside class="col-md-3 col-lg-3" style="height: auto !important">
+  <a
+    href="{{posts.url}}"
+    target="_blank"
+    class="text-decoration-none py-1"
+    rel="noreferrer"
+    ><div class="p-3 text-light mb-2" style="opacity: 1; transform: none">
+      <div class="d-flex">
+        <img
+          src="{{post.photo.url}}"
+          class="m-2"
+          style="width: 10rem"
+        />
+      </div>
+      <p style="font-size: 0.9rem">
+        {{post.note|safe}}
+      </p>
+    </div></a
+  >
+</aside>
+
+{% endblock aside %}

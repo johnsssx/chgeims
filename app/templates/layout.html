@@ -1,0 +1,482 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChGeims! | Download free games</title>
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="{% static 'images/favicon.ico' %}"
+      type="image/x-icon"
+    />
+    <!-- BoostrapJS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Boostrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- Google -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'main.css' %}" />
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3666637859142212"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="text-light bg-black">
+    <!-- Navbar -->
+    {% include 'partials/navbar.html' %}
+
+    <!-- BlockContent -->
+    {% block content %} {% endblock %}
+
+    <!-- scrollTOP -->
+    <div id="too__top" class="bg-primary float-md-right">
+      <span class="material-icons">north</span>
+    </div>
+    <script src="{% static 'main.js' %}"></script>
+
+    <!-- AlertSweet2 -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Alert -->
+    {% if messages %} {% for m in messages %}
+    <script>
+      Swal.fire({
+        title: "Congratulations",
+        text: "{{m}}",
+        icon: "success",
+        color: "#ffffff",
+        background: "#090909",
+      });
+    </script>
+    {% endfor %} {% endif %}
+
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div
+          class="modal-content"
+          style="
+            opacity: 1;
+            transform: none;
+            background: #000000; /* fallback for old browsers */
+            background: -webkit-linear-gradient(
+              to right,
+              #434343,
+              #000000
+            ); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(
+              to right,
+              #434343,
+              #000000
+            ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          "
+        >
+          <div class="modal-body">
+            <div class="d-flex justify-content-between">
+              <h2 class="h5 mb-2 fw-bold modal-title" id="exampleModalLabel">
+                Buscar dentro de las secciones
+              </h2>
+              <button
+                type="button"
+                class="btn-close btn btn-warning btn-close-white text-reset shadow-none"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <p class="text-secondary fw-bolder fs-6">
+              Busca el contenido específico de cada sección, principal y juegos.
+            </p>
+            <div>
+              <div class="d-flex flex-start mb-3"></div>
+              <form class="d-flex" method="GET">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                  name="search"
+                />
+                <button class="btn btn-outline-primary" type="submit">
+                  Search
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="exampleModal2"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div
+          class="modal-content"
+          style="
+            opacity: 1;
+            transform: none;
+            background: #000000; /* fallback for old browsers */
+            background: -webkit-linear-gradient(
+              to right,
+              #434343,
+              #000000
+            ); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(
+              to right,
+              #434343,
+              #000000
+            ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          "
+        >
+          <div class="modal-body">
+            <div class="d-flex justify-content-between">
+              <h2 class="h5 mb-2 fw-bold modal-title" id="exampleModalLabel2">
+                Nuestras Redes Sociales
+              </h2>
+              <button
+                type="button"
+                class="btn-close btn btn-warning btn-close-white text-reset shadow-none"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div>
+              <div class="d-flex flex-start mb-3"></div>
+              <a href="https://www.twitch.tv/ischaron4" target="_blank"
+                ><img
+                  src="https://i.imgur.com/0prbgnw.png"
+                  alt="Twitch"
+                  title="Nuestro Twitch =D"
+                  width="43"
+                  height="43"
+              /></a>
+              <a href="https://twitter.com/4Ischaron" target="_blank"
+                ><img
+                  src="https://i.imgur.com/8OmAhZb.png"
+                  alt="Twitch"
+                  title="Nuestro Twitter =D"
+                  width="43"
+                  height="43"
+              /></a>
+              <a
+                href="https://www.youtube.com/channel/UCJ6mI7dEp6W-WH2O38D0rXw"
+                target="_blank"
+                ><img
+                  src="https://i.imgur.com/ke9yOAP.png"
+                  alt="Twitch"
+                  title="Nuestro Youtube =D"
+                  width="43"
+                  height="43"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      tabindex="-1"
+      id="offcanvasExample"
+      aria-labelledby="offcanvasExampleLabel"
+      class="offcanvas offcanvas-start bg-dark"
+    >
+      <div class="offcanvas-header bg-black">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">ChGeims</h5>
+        <button
+          type="button"
+          class="btn-close text-reset bg-dark"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body bg-black">
+        {% if user.is_authenticated %} {% if perms.app.admin_interface %}
+        <div
+          class="list-group-item list-group-item-action text-light list-group-item-action mb-2 p-2 category-item card-project"
+          style="
+            opacity: 1;
+            transform: none;
+            background: #000000; /* fallback for old browsers */
+            background: -webkit-linear-gradient(
+              to right,
+              #434343,
+              #000000
+            ); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(
+              to right,
+              #434343,
+              #000000
+            ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          "
+        >
+          <a
+            href="{% url 'admin_panel' %}"
+            style="text-decoration: none"
+            class="text-light"
+          >
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="material-icons"> admin_panel_settings </span
+              ><span>ADM👑</span>
+            </div>
+          </a>
+        </div>
+        {% endif %}
+        <div
+          class="list-group-item list-group-item-action text-light list-group-item-action mb-2 p-2 category-item card-project"
+          style="
+            opacity: 1;
+            transform: none;
+            background: #000000; /* fallback for old browsers */
+            background: -webkit-linear-gradient(
+              to right,
+              #434343,
+              #000000
+            ); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(
+              to right,
+              #434343,
+              #000000
+            ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          "
+        >
+          <a
+            href="{% url 'logout' %}"
+            style="text-decoration: none"
+            class="text-light"
+          >
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="material-icons"> logout </span><span>Logout</span>
+            </div>
+          </a>
+        </div>
+
+        {% if request.user.profile.avatar %}
+        <div
+          class="list-group-item list-group-item-action text-light list-group-item-action mb-2 p-2 category-item card-project"
+          style="
+            opacity: 1;
+            transform: none;
+            background: #000000; /* fallback for old browsers */
+            background: -webkit-linear-gradient(
+              to right,
+              #434343,
+              #000000
+            ); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(
+              to right,
+              #434343,
+              #000000
+            ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          "
+        >
+          <a
+            href="{% url 'profile' %}"
+            style="text-decoration: none"
+            class="text-light"
+          >
+            <div class="d-flex justify-content-between align-items-center">
+              <img
+                src="{{request.user.profile.avatar.url}}"
+                alt="Angular"
+                class="img-fluid"
+                style="width: 1.8rem"
+              /><span>Account</span>
+            </div>
+          </a>
+        </div>
+        {% else %}
+        <div
+          class="list-group-item list-group-item-action text-light list-group-item-action mb-2 p-2 category-item card-project"
+          style="
+            opacity: 1;
+            transform: none;
+            background: #000000; /* fallback for old browsers */
+            background: -webkit-linear-gradient(
+              to right,
+              #434343,
+              #000000
+            ); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(
+              to right,
+              #434343,
+              #000000
+            ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          "
+        >
+          <a
+            href="{% url 'profile' %}"
+            style="text-decoration: none"
+            class="text-light"
+          >
+            <div class="d-flex justify-content-between align-items-center">
+              <img
+                src="{% static 'images/no-avatar.jpg' %}"
+                alt="Angular"
+                class="img-fluid"
+                style="width: 1.8rem"
+              /><span>Account</span>
+            </div>
+          </a>
+        </div>
+        {% endif %} {% else %}
+        <div
+          class="list-group-item list-group-item-action text-light list-group-item-action mb-2 p-2 category-item card-project"
+          style="
+            opacity: 1;
+            transform: none;
+            background: #000000; /* fallback for old browsers */
+            background: -webkit-linear-gradient(
+              to right,
+              #434343,
+              #000000
+            ); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(
+              to right,
+              #434343,
+              #000000
+            ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          "
+        >
+          <a
+            href="{% url 'login' %}"
+            style="text-decoration: none"
+            class="text-light"
+          >
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="material-icons"> login </span><span>Login</span>
+            </div>
+          </a>
+        </div>
+
+        <div
+          class="list-group-item list-group-item-action text-light list-group-item-action mb-2 p-2 category-item card-project"
+          style="
+            opacity: 1;
+            transform: none;
+            background: #000000; /* fallback for old browsers */
+            background: -webkit-linear-gradient(
+              to right,
+              #434343,
+              #000000
+            ); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(
+              to right,
+              #434343,
+              #000000
+            ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          "
+        >
+          <a
+            href="{% url 'sign_up' %}"
+            style="text-decoration: none"
+            class="text-light"
+          >
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="material-icons"> app_registration </span
+              ><span>Sign Up</span>
+            </div>
+          </a>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <section class="bg-dark p-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 py-4">
+            <h3>ChGeims</h3>
+            <ul class="list-unstyled">
+              <li class="text-start my-3">
+                <a
+                  class="text-decoration-none text-white"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal2"
+                  >Redes Sociales</a
+                >
+              </li>
+              <li class="text-start my-3">
+                <a
+                  class="text-decoration-none text-white"
+                  href="{% url 'terms' %}"
+                  >Terminos</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4 px-5">
+            <p class="my-4">
+              Este sitio se creo con fines de ayudar a la comunidad de gamers
+              facilitandoles una amplia lista de juegos de pago como gratis sin
+              virus y faciles de descargar.
+            </p>
+            <span class="material-icons"> verified </span>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="d-flex align-items-center card card-body bg-dark h-100">
+              <div>
+                <span class="material-icons" id="creditcard">
+                  credit_card
+                </span>
+                <h3>Donaciones</h3>
+                <p>
+                  Si nuestro sitio es de tu agrado y quieres ayudarnos
+                  monetariamente, tenemos un sistema de donaciones =D
+                </p>
+                <a href="{% url 'donate' %}" class="btn btn-primary"
+                  >Donaciones</a
+                >
+              </div>
+            </div>
+            <ul class="text-start list-unstyled"></ul>
+            <ul class="list-unstyled"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-2">
+      <div class="bg-black">
+        <div class="container">
+          <div class="row py-2">
+            <span class="fs-6 text-muted">ChGeims © 2022</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

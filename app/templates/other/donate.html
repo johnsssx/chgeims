@@ -1,0 +1,229 @@
+{% extends 'layout.html' %} {% block content %} {% load static %}
+
+<main style="height: auto !important">
+  <script>
+    function backPage() {
+      window.history.back();
+    }
+
+    function copyToMetamask() {
+      let val = "0xf6FCe8bb01cAf06CEe96029e75D9523Bf7EcB9B7";
+      const selBox = document.createElement("textarea");
+      selBox.style.position = "fixed";
+      selBox.style.left = "0";
+      selBox.style.top = "0";
+      selBox.style.opacity = "0";
+      selBox.value = val;
+      document.body.appendChild(selBox);
+      selBox.focus();
+      selBox.select();
+      document.execCommand("copy");
+      document.body.removeChild(selBox);
+    }
+
+    function copyToBinance() {
+      let val = "0x3b5e056baae29e5567dd51382c22663bc8e28017";
+      const selBox = document.createElement("textarea");
+      selBox.style.position = "fixed";
+      selBox.style.left = "0";
+      selBox.style.top = "0";
+      selBox.style.opacity = "0";
+      selBox.value = val;
+      document.body.appendChild(selBox);
+      selBox.focus();
+      selBox.select();
+      document.execCommand("copy");
+      document.body.removeChild(selBox);
+    }
+    function deletedSheath() {
+      Swal.fire({
+        title: "Congratulations",
+        text: "Successfully copied.",
+        icon: "success",
+        color: "#ffffff",
+        background: "#090909",
+      });
+    }
+  </script>
+  <section class="bg-black">
+    <div class="bg-primary">
+      <div class="container p-5">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="d-flex justify-content-center mb-2">
+              <h2 class="bg-dark">Donaciones 🙌💕</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="d-flex justify-content-between align-items-center p-1"
+      style="
+        background: #000000; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #434343,
+          #000000
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #434343,
+          #000000
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      "
+    >
+      <a
+        href="#"
+        onclick="backPage()"
+        class="btn px-2 rounded-0 d-flex align-items-center bg-black text-white"
+      >
+        <span class="me-1">&larr; Atras</span>
+      </a>
+    </div>
+  </section>
+  <section>
+    <div class="container p-3">
+      <div class="row h-100">
+        <div class="col-xs-12 col-md-8">
+          <div class="ratio ratio-16x9">
+            <img
+              src="https://www.shantisewasamiti.com/wp-content/uploads/2020/11/donate.jpg"
+              class="card-img-top"
+            />
+          </div>
+
+          <div
+            class="card card-body bg-dark text-light rounded-0 mt-2"
+            style="opacity: 1; transform: none"
+          >
+            <p class="my-4">
+              Tenemos un sistema de donaciones opcionales, por medio de
+              criptomonedas como otros bancos virtuales ya sea paypal, hasta
+              ahora solo trabajamos con esas plataformas,
+              <strong>muchas gracias!</strong> por cada donacion que nos dan.
+            </p>
+          </div>
+          <article class="card bg-secondary mt-2 rounded-0 py-2">
+            <header class="card-header d-flex justify-content-between">
+              <h3 class="h6">Wallet</h3>
+            </header>
+            <div class="card-body">
+              <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item bg-dark">
+                  <h2 class="accordion-header" id="flush-headingOne">
+                    <button
+                      class="accordion-button collapsed bg-black text-light"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseOne"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseOne"
+                    >
+                      Metamask
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseOne"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingOne"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                      0xf6FCe8bb01cAf06CEe96029e75D9523Bf7EcB9B7 <br />
+                      <button
+                        type="button"
+                        onclick="copyToMetamask(),deletedSheath()"
+                        class="btn btn-primary"
+                      >
+                        CopyBlock
+                      </button>
+                      <a
+                        href="https://metamask.io/"
+                        class="btn btn-success"
+                        target="_blank"
+                        >Donar</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item bg-dark">
+                  <h2 class="accordion-header" id="flush-headingTwo">
+                    <button
+                      class="accordion-button collapsed bg-black text-light"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseTwo"
+                    >
+                      Binance
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseTwo"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingTwo"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                      0x3b5e056baae29e5567dd51382c22663bc8e28017 <br />
+                      <button
+                        type="button"
+                        onclick="copyToBinance(),deletedSheath()"
+                        class="btn btn-primary"
+                      >
+                        CopyBlock
+                      </button>
+                      <a
+                        href="https://www.binance.com/es"
+                        class="btn btn-success"
+                        target="_blank"
+                        >Donar</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-xs-12 col-md-4 mt-2">
+          <div class="text-center h-100 bg-dark">
+            <div>
+              <a
+                href="https://www.paypal.com/donate?hosted_button_id=LABE3NUCMB7SL"
+                target="_blank"
+              >
+                <img
+                  src="https://www.winvesta.in/wp-content/uploads/2020/11/paypal.png"
+                  class="card-img mb-2"
+                  alt="paypal"
+                  title="Dona directamente desde Paypal con varias opciones diferentes =D"
+                />
+              </a>
+            </div>
+            <h1 class="h3 fw-bold">Muchas gracias =D</h1>
+            <p>
+              Muchas gracias por cada donacion que nos dan, cada donacion la
+              utilizamos para mantener el sitio web como los videos y sorteos de
+              juegos.
+            </p>
+            <div>
+              <a href="https://www.patreon.com/chgeims" target="_blank">
+                <img
+                  src="https://images.squarespace-cdn.com/content/v1/5d07f6ad92c8e20001747270/1560874304229-MYAGEYA8PBB8B3EJSPGQ/Patreon+logo.png?format=2500w"
+                  class="card-img mb-2"
+                  alt="patreon"
+                  title="Dona directamente desde Patreon =D"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+{% endblock %}

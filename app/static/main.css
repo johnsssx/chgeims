@@ -1,0 +1,24 @@
+
+
+.card-project:hover {
+  border: 1px solid #ffffff;
+}
+
+#too__top {
+  width: 35px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  position: fixed;
+  bottom: 50px;
+  right: 5px;
+  display: none;
+}
+
+.form-field{
+	width:250px;
+	display: inline-block;
+	padding: 5px;
+}

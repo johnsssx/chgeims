@@ -1,0 +1,190 @@
+{% extends 'layout.html' %} {% block content %} {% load static %} {% load humanize %} {% load crispy_forms_tags %}
+
+<main style="height: auto !important">
+  <script>
+    function backPage() {
+      window.history.back();
+    }
+  </script>
+  <section class="p-4">
+    <div class="container" style="height: auto !important">
+      <div class="row mt-4" style="height: auto !important">
+        <div class="col-xs-12 col-sm-10 col-md-9 col-lg-9">
+          <a
+            href="{% url 'games' %}"
+            style="opacity: 0.5; text-decoration: none"
+            class="text-light"
+            >Volver al contenido</a
+          >
+          <div
+            class="d-flex justify-content-between align-items-center my-3 py-1"
+            style="
+              opacity: 1;
+              transform: none;
+              background: #000000; /* fallback for old browsers */
+              background: -webkit-linear-gradient(
+                to right,
+                #434343,
+                #000000
+              ); /* Chrome 10-25, Safari 5.1-6 */
+              background: linear-gradient(
+                to right,
+                #434343,
+                #000000
+              ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            "
+          >
+            <div class="my-1 d-flex align-items-center">
+              <img
+                src="{{posts.miniature.url}}"
+                class="p-1 rounded-circle ms-3"
+                style="
+                  width: 3.5rem;
+                  height: 3.5rem;
+                  object-fit: contain;
+                  background-color: rgb(238, 238, 238);
+                  padding: 4px;
+                  transform: none;
+                "
+              />
+              <div class="ms-3">
+                <h1 class="h6">{{posts.title}}</h1>
+                <h2 class="h6">{{posts.description}}</h2>
+              </div>
+            </div>
+            <a
+            href="#" onclick="backPage()"
+            class="btn px-2 rounded-0 d-flex align-items-center bg-black text-white"
+          >
+            <span class="me-2">&larr; Atras</span>
+          </a>
+          </div>
+          <div class="ratio ratio-16x9" style="opacity: 1; transform: none">
+            <iframe
+              width="560"
+              height="315"
+              src="{{posts.url}}"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen=""
+            ></iframe>
+          </div>
+          <div
+            class="card card-body bg-dark text-light mt-3"
+            style="opacity: 1; transform: none"
+          >
+            <p class="my-4">{{posts.content|safe}}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <p class="text-secondary">¿Quieres Compatir mi Contenido?</p>
+                <div>
+                  <a href="https://www.facebook.com/sharer.php?u=www.mipagina.com" target="_blank"
+                ><img
+                  src="https://i.imgur.com/FfQJRIa.png"
+                  alt="Twitch"
+                  title="Nuestro Twitch =D"
+                  width="43"
+                  height="43"
+              /></a>
+                </div>
+              </div>
+              <div>
+                <p class="text-muted">
+                  <span
+                    >Publicado: <strong
+                      >{{posts.date|date:'m/d/Y'|upper}}</strong
+                    ></span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+          <article class="card bg-dark mt-2 border-0 py-2">
+            <header class="card-header d-flex justify-content-between">
+              <h3 class="h6">Requerimientos</h3>
+              <span class="text-secondary"
+                >{{posts.date|date:'m/d/Y'|upper}}</span
+              >
+            </header>
+            <div class="card-body content_article__2W_0h">
+              <span class="placeholder col-12"></span>
+
+<span class="placeholder col-12 bg-primary"></span>
+<span class="placeholder col-12 bg-secondary"></span>
+<span class="placeholder col-12 bg-success"></span>
+<span class="placeholder col-12 bg-danger"></span>
+<span class="placeholder col-12 bg-warning"></span>
+<span class="placeholder col-12 bg-info"></span>
+<span class="placeholder col-12 bg-light"></span>
+<span class="placeholder col-12 bg-dark"></span>
+
+<div class="card bg-black mt-2">
+  <div class="card-body">
+    <h5 class="card-title">Requerimientos Minimos</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Recursos Bajos</h6>
+    <p class="card-text"><pre>{{posts.requirementm|safe}}</pre></p>
+  </div>
+</div>
+<br>
+<div class="card bg-black mt-2" >
+  <div class="card-body">
+    <h5 class="card-title">Requerimientos Recomendados</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Recursos Desentes</h6>
+    <p class="card-text"><pre>{{posts.requirementr|safe}}</pre></p>
+  </div>
+</div>
+
+            </div>
+          </article>
+          <article class="card bg-dark mt-2 border-0 py-2">
+            <header class="card-header d-flex justify-content-between">
+              <h3 class="h6">Imagenes</h3>
+              <span class="text-secondary"
+                >{{posts.date|date:'m/d/Y'|upper}}</span
+              >
+            </header>
+            <div class="card-body content_article__2W_0h">
+              <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="{{posts.screen1|safe}}" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="{{posts.screen2|safe}}" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{posts.screen3|safe}}" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="card bg-dark mt-2 border-0 py-2">
+            <header class="card-header d-flex justify-content-between">
+              <h3 class="h6">Descargas</h3>
+              <span class="text-secondary"
+                >{{posts.date|date:'m/d/Y'|upper}}</span
+              >
+            </header>
+            <div class="card-body content_article__2W_0h">
+              <a href="{{posts.download1|safe}}" class="btn btn-primary" target="_blank">Mediafire</a>
+              <a href="{{posts.download2|safe}}" class="btn btn-danger" target="_blank">Mega</a>
+              <a href="{{posts.download3|safe}}" class="btn btn-success" target="_blank">Torrent</a>
+            </div>
+          </article>
+        </div>
+        {% block aside %} {% include 'other/aside.html' %} {% endblock aside %}
+      </div>
+    </div>
+  </section>
+</main>
+
+{% endblock %}

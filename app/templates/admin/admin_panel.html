@@ -1,0 +1,95 @@
+{% extends 'layout.html' %} {% block content %} {% load static %} {% load humanize %}
+
+<main style="height: auto !important">
+  <script>
+    function backPage() {
+      window.history.back();
+    }
+  </script>
+  <section class="p-4">
+    <div class="container" style="height: auto !important">
+      <div class="row mt-4" style="height: auto !important">
+        <div class="col-xs-12 col-sm-10 col-md-9 col-lg-9">
+          <a
+            href="{% url 'games' %}"
+            style="opacity: 0.5; text-decoration: none"
+            class="text-light"
+            >Volver al contenido</a
+          >
+          <div
+            class="d-flex justify-content-between align-items-center my-3 py-1"
+            style="
+              opacity: 1;
+              transform: none;
+              background: #000000; /* fallback for old browsers */
+              background: -webkit-linear-gradient(
+                to right,
+                #434343,
+                #000000
+              ); /* Chrome 10-25, Safari 5.1-6 */
+              background: linear-gradient(
+                to right,
+                #434343,
+                #000000
+              ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            "
+          >
+            <div class="my-1 d-flex align-items-center">
+              <img
+                src="{% static 'images/logo.png' %}"
+                class="p-1 rounded-circle ms-3"
+                style="
+                  width: 3.5rem;
+                  height: 3.5rem;
+                  object-fit: contain;
+                  background-color: rgb(238, 238, 238);
+                  padding: 4px;
+                  transform: none;
+                "
+              />
+              <div class="ms-3">
+                <h1 class="h6">Admin Panel 👑</h1>
+                <h2 class="h6">Add tickets, games and news from here.</h2>
+              </div>
+            </div>
+            <a
+              href="#"
+              onclick="backPage()"
+              class="btn px-2 rounded-0 d-flex align-items-center bg-black text-white"
+            >
+              <span class="me-2">&larr; Atras</span>
+            </a>
+          </div>
+          <div class="ratio ratio-16x9" style="opacity: 1; transform: none">
+            <img
+              src="https://j.gifs.com/5y8xPR.gif"
+              alt="gif"
+              title="giftrd23123"
+              width="560"
+              height="315"
+            />
+          </div>
+          <div
+            class="card card-body bg-dark text-light mt-3"
+            style="opacity: 1; transform: none"
+          >
+            <p class="my-4">To the side there is a session to add the entries of the web, the games and the news of the blog.</p>
+          </div>
+          <article class="card bg-dark mt-2 border-0 py-2">
+            <header class="card-header d-flex justify-content-between">
+              <h3 class="h6">ADM</h3>
+              <span class="text-secondary">👑</span>
+            </header>
+            <div class="card-body content_article__2W_0h">
+              <p><a href="/admin" class="btn btn-primary">Advanced interface</a></p>
+            </div>
+          </article>
+        </div>
+
+        {% block sidebar %} {% include 'admin/sidebar.html' %} {% endblock sidebar %}
+      </div>
+    </div>
+  </section>
+</main>
+
+{% endblock %}

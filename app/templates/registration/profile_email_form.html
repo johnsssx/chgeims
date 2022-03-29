@@ -1,0 +1,42 @@
+{% extends 'layout.html' %} {% block content %} {% load static %}
+
+<main style="min-height: 100vh">
+  <script>
+    function backPage() {
+      window.history.back();
+    }
+  </script>
+  <section>
+    <main role="main">
+      <div class="container mb-4 p-3">
+        <div class="row mt-3">
+          <div class="col-md-9 mx-auto mb-5">
+            <div class="card bg-black">
+              <div class="card-body">
+                <form method="post">{% csrf_token %}
+                  <h3 class="mb-4">Email</h3>
+                  {{form.as_p}}
+                  <p>
+                    <a
+                      class="btn btn-warning me-1"
+                      href="#"
+                      onclick="backPage()"
+                      >&larr; Return</a
+                    >
+                    <input
+                      type="submit"
+                      class="btn btn-primary btn-block"
+                      value="Update"
+                    />
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </section>
+</main>
+
+{% endblock %}
